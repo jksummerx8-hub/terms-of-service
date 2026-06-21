@@ -1,69 +1,285 @@
-服務條款 (繁體中文)
-最新更新日期：2026 年 06 月 21 日
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Magic — Terms of Service & 服務條款</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-main: #f9fafb;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --accent-bg: #f3f4f6;
+            --accent-border: #d1d5db;
+        }
 
-歡迎使用 Zenith Magic（以下簡稱「本應用程式」）。本服務條款（以下簡稱「本條款」）旨在規範您與本應用程式開發團隊（以下簡稱「我們」）之間的權利與義務。當您建立帳戶或使用本服務時，即表示您已閱讀、理解並同意接受本條款之所有內容。
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-1. 帳戶註冊與安全
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 0;
+        }
 
-您同意在註冊時提供真實、正確且最新的個人資料（包含姓名/暱稱與電子郵件）。
+        .navbar {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
 
-您應妥善保管您的帳號與密碼，並對該帳號下進行的所有活動負完全責任。未滿 18 歲之使用者，應於監護人了解並同意本條款內容後方得使用服務。
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
 
-2. 使用者行為規範
+        .brand {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-您不得利用本服務進行任何非法、侵權、惡意攻擊或干擾本應用程式正常運作之行為。
+        .lang-switch a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s;
+            border: 1px solid var(--border-color);
+            margin-left: 0.5rem;
+        }
 
-本應用程式內的所有視覺設計、音效、介面與技術內容均屬智慧財產權保護範圍，未經授權不得複製或重製。
+        .lang-switch a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
 
-3. 服務變更與終止
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
 
-我們保留隨時修改、暫停或終止本服務（或其任何部分）的權利，恕不另行個別通知。
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
 
-使用者亦可隨時於 App 內申請刪除帳戶並終止使用本服務。
+        .meta-info {
+            background-color: var(--bg-main);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
 
-4. 免責聲明與責任限制
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
 
-本服務依「現狀」及「現有」基礎提供，我們不保證服務絕對不會中斷或毫無錯誤。
+        h2 {
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
 
-在法律允許的最大範圍內，我們不對因使用或無法使用本服務而導致的任何間接、附帶或懲罰性損害負責。
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
 
-5. 管轄法律與爭議解決
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-light);
+        }
 
-本條款之解釋與適用，均以中華民國（台灣）法律為準據法。因本服務所生之任何爭議，雙方同意以台灣台北地方法院為第一審管轄法院。
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .important-box {
+            background-color: #fffaf0;
+            border: 1px solid #feebc8;
+            border-left: 4px solid #dd6b20;
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            color: #744210;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #9ca3af;
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 導覽列 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand">📜 Zenith Magic</div>
+            <div class="lang-switch">
+                <a href="#zh-tw">繁體中文</a>
+                <a href="#en">English</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- ================= 繁體中文區塊 ================= -->
+        <section id="zh-tw" class="card">
+            <h1>服務條款 (Terms of Service)</h1>
+            <div class="meta-info">
+                <strong>最新更新日期：</strong>2026 年 06 月 21 日<br>
+                <strong>適用主體：</strong>Zenith Magic 本應用程式及相關服務
+            </div>
+
+            <p>歡迎您使用 Zenith Magic（以下簡稱「本應用程式」）。本服務條款（以下簡稱「本條款」）旨在規範您（以下簡稱「使用者」或「您」）與本應用程式開發團隊之間的權利與義務。當您下載、安裝、註冊或開始使用本應用程式時，即視為您已閱讀、理解並同意接受本條款之所有內容。</p>
+
+            <div class="important-box">
+                <strong>⚠️ 重要提示：</strong>如果您不同意本條款的任何部分，請立即停止使用本應用程式並解除安裝。
+            </div>
+
+            <h2>1. 帳戶註冊與安全</h2>
+            <ul>
+                <li><strong>資訊真實性：</strong>您在註冊帳戶時，應提供真實、準確且完整的個人資料（如姓名、電子郵件）。若資料有變更，應及時自行更新。</li>
+                <li><strong>帳戶保管：</strong>您應妥善保管您的帳戶密碼，並對該帳戶下發生的所有活動負全部責任。若發現帳戶遭盜用或有任何安全漏洞，請立即與我們聯絡。</li>
+                <li><strong>帳戶刪除：</strong>您有權隨時透過應用程式內的「設定」頁面申請刪除帳戶。帳戶一旦刪除，所有歷史數據將會被永久清除且無法恢復。</li>
+            </ul>
+
+            <h2>2. 使用規範與禁止行為</h2>
+            <p>在使用本應用程式時，您承諾遵守當地法律法規，並同意不會進行以下行為：</p>
+            <ol>
+                <li>利用本應用程式從事任何非法、欺詐、惡意或侵害他人合法權益的活動。</li>
+                <li>企圖干擾、破壞或繞過本應用程式的安全系統、驗證機制，或對本應用程式進行逆向工程、解編。</li>
+                <li>惡意利用本應用程式的漏洞，或傳輸任何帶有惡意軟體、病毒的程式碼。</li>
+            </ol>
+
+            <h2>3. 智慧財產權</h2>
+            <p>本應用程式所包含之所有內容（包括但不限於文字、標誌、介面設計、圖像、程式碼、軟體等）之智慧財產權，均歸本應用程式開發團隊或其授權人所有。未經事先書面許可，您不得複製、修改、散布或將其用於任何商業用途。</p>
+
+            <h2>4. 免責聲明與服務變更</h2>
+            <ul>
+                <li><strong>現狀提供：</strong>本應用程式係依「現狀（As Is）」及「現有（As Available）」的基礎提供服務。我們不保證服務絕對不會中斷、及時、安全或無錯誤。</li>
+                <li><strong>服務變更：</strong>為了優化使用者體驗，我們保留隨時修改、暫停或終止本應用程式部分或全部服務的權利，且不另行通知。</li>
+                <li><strong>損害賠償限制：</strong>在法律允許的最大範圍內，我們不對因使用或無法使用本應用程式而導致的任何直接、間接、偶發或衍生性損失負責。</li>
+            </ul>
+
+            <h2>5. 條款修改</h2>
+            <p>我們保留隨時修改本條款的權利。修訂後的條款一旦公布即生效，我們將更新本頁面頂部的「最新更新日期」。建議您定期查看本條款，若您在條款修改後繼續使用本應用程式，即代表您同意接受修訂後的服務條款。</p>
+
+            <h2>6. 聯絡我們</h2>
+            <p>如果您對本服務條款有任何疑問或建議，請透過以下電子郵件與我們聯絡：</p>
+            <p>📥 <strong>電子郵件：</strong> <a href="mailto:xrknight7@yahoo.com" style="color: var(--primary-color);">xrknight7@yahoo.com</a></p>
+        </section>
 
 
+        <!-- ================= English Section ================= -->
+        <section id="en" class="card">
+            <h1>Terms of Service</h1>
+            <div class="meta-info">
+                <strong>Last Updated:</strong> June 21, 2026<br>
+                <strong>Scope:</strong> Zenith Magic (The App) and related services
+            </div>
 
+            <p>Welcome to Zenith Magic (hereinafter referred to as the "App"). These Terms of Service (hereinafter referred to as "Terms") govern the rights and obligations between you (hereinafter referred to as "User" or "You") and the developer team of the App. By downloading, installing, registering, or using the App, you acknowledge that you have read, understood, and agreed to be bound by all the contents of these Terms.</p>
 
+            <div class="important-box">
+                <strong>⚠️ IMPORTANT NOTICE:</strong> If you do not agree to any part of these Terms, please stop using the App immediately and uninstall it.
+            </div>
 
-Terms of Service (English)
-Last Updated: June 21, 2026
+            <h2>1. Account Registration and Security</h2>
+            <ul>
+                <li><strong>Accuracy of Information:</strong> When registering an account, you must provide true, accurate, and complete personal information (such as your name and email address). You are responsible for keeping this information up to date.</li>
+                <li><strong>Account Custody:</strong> You are responsible for safeguarding your account password and for all activities that occur under your account. Please notify us immediately if you discover any unauthorized use of your account.</li>
+                <li><strong>Account Deletion:</strong> You have the right to request account deletion at any time through the in-app settings. Once deleted, all associated historical data will be permanently and irreversibly purged.</li>
+            </ul>
 
-Welcome to Zenith Magic (hereinafter referred to as the "App"). These Terms of Service (hereinafter referred to as the "Terms") govern the relationship and rights between you and the App development team (hereinafter referred to as "we," "us," or "our"). By creating an account or using the App, you acknowledge that you have read, understood, and agreed to be bound by these Terms.
+            <h2>2. User Conduct and Prohibited Activities</h2>
+            <p>When using the App, you agree to comply with all applicable laws and regulations, and agree not to engage in the following activities:</p>
+            <ol>
+                <li>Using the App for any unlawful, fraudulent, malicious, or damaging activities that infringe upon the rights of others.</li>
+                <li>Attempting to interfere with, disrupt, bypass the security systems, or reverse engineer, decompile any part of the App.</li>
+                <li>Exploiting any system vulnerabilities or transmitting any malicious software, malware, or viruses through the App.</li>
+            </ol>
 
-1. Account Registration and Security
+            <h2>3. Intellectual Property Rights</h2>
+            <p>All intellectual property rights in the App, including but not limited to texts, logos, interface designs, graphics, source codes, and software, are owned by the developer team or its licensors. You may not copy, modify, distribute, or use any contents for commercial purposes without prior written consent.</p>
 
-You agree to provide true, accurate, and current information (including name/nickname and email address) during registration.
+            <h2>4. Disclaimers and Service Modifications</h2>
+            <ul>
+                <li><strong>"As Is" Basis:</strong> The App is provided on an "As Is" and "As Available" basis. We do not warrant that the services will be uninterrupted, timely, secure, or completely error-free.</li>
+                <li><strong>Service Modifications:</strong> To optimize user experience, we reserve the right to modify, suspend, or terminate part or all of the App's services at any time without prior notice.</li>
+                <li><strong>Limitation of Liability:</strong> To the maximum extent permitted by applicable law, we shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of the use or inability to use the App.</li>
+            </ul>
 
-You are entirely responsible for maintaining the confidentiality of your account password and for all activities that occur under your account. Users under the age of 18 must obtain consent from a parent or legal guardian before using the service.
+            <h2>5. Amendments to Terms</h2>
+            <p>We reserve the right to amend these Terms at any time. The revised terms will become effective immediately upon being posted, and we will update the "Last Updated" date at the top of this page. Your continued use of the App following any modifications constitutes your acceptance of the updated Terms.</p>
 
-2. User Conduct
+            <h2>6. Contact Us</h2>
+            <p>If you have any questions or suggestions regarding these Terms of Service, please contact us at:</p>
+            <p>📥 <strong>Email:</strong> <a href="mailto:xrknight7@yahoo.com" style="color: var(--primary-color);">xrknight7@yahoo.com</a></p>
+        </section>
 
-You agree not to use the App for any unlawful, infringing, malicious, or disruptive activities that interfere with the normal operation of the service.
+        <!-- 頁尾 -->
+        <div class="footer">
+            &copy; 2026 Zenith Magic. All rights reserved.
+        </div>
+    </div>
 
-All visual designs, audio-visual elements, user interfaces, and technical content within the App are protected by intellectual property laws and may not be copied or reproduced without authorization.
-
-3. Modification and Termination of Service
-
-We reserve the right to modify, suspend, or terminate the App (or any part thereof) at any time without prior individual notice.
-
-Users retain the right to delete their accounts within the App and terminate the use of the service at any time.
-
-4. Disclaimers and Limitation of Liability
-
-The service is provided on an "AS IS" and "AS AVAILABLE" basis. We do not guarantee that the service will be uninterrupted or error-free.
-
-To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, or consequential damages arising out of your use or inability to use the App.
-
-5. Governing Law
-
-These Terms shall be governed by and construed in accordance with the laws of Taiwan (R.O.C.). Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the Taipei District Court in Taiwan as the court of first instance.
+</body>
+</html>
